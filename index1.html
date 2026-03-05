@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <style>
+    /* nav css */
+
+        .nav-flex{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 20px;
+        }
+
+        .center-menu{
+            position:absolute;
+            left:50%;
+            transform:translateX(-50%);
+            display:flex;
+            gap:25px;
+        }
+
+        .right-menu{
+            display:flex;
+            gap:15px;
+        }
+        .brand-logo{
+            position:relative !important;
+        }
+
+        body{
+        font-family: "Poppins", sans-serif;
+        }
+
+        /* end nav css */
+
+
+        /* HERO */
+
+        .hero{
+        height:700px;
+        background:url("images/hotel1.jpeg") center/cover no-repeat;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        }
+
+        .hero-overlay{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.55);
+        }
+
+        .hero-content{
+        position:relative;
+        color:white;
+        max-width:800px;
+        }
+
+        .hero h2{
+        font-size:48px;
+        font-weight:600;
+        }
+
+        .hero p{
+        margin:20px 0;
+        }
+
+        .hero-buttons a{
+        margin:10px;
+        }
+
+        .border-btn{
+        border:1px solid white;
+        }
+
+        body{
+            background:#f4f4f4;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        /* end hero css */
+
+
+        /* start booking css */
+
+        body{
+            background:#f4f4f4;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .search-container{
+            display:flex;
+            justify-content:center;
+            margin-top:120px;
+        }
+
+        .search-box{
+            background:white;
+            display:flex;
+            align-items:center;
+            border-radius:12px;
+            padding:15px 20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.15);
+            gap:20px;
+        }
+
+        .field{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .field label{
+            font-size:12px;
+            color:#888;
+        }
+
+        .field p{
+            margin:0;
+            font-size:14px;
+            font-weight:600;
+        }
+
+        .material-symbols-outlined{
+            font-size:22px;
+            color:#555;
+        }
+
+        .divider{
+            width:1px;
+            height:40px;
+            background:#e5e5e5;
+        }
+
+        .book-btn{
+            background:#1e3a8a;
+            color:white;
+            border:none;
+            padding:14px 26px;
+            border-radius:8px;
+            font-size:14px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .book-btn:hover{
+            background:#162c6b;
+        }
+
+        /* end booking css */
+    </style>
+</head>
+<body>
+    <!-- nav start -->
+    <section>
+        <nav style="background-color:#2d2d2c;">
+            <div class="nav-wrapper nav-flex">
+
+                <!-- Logo -->
+                <a href="#" class="brand-logo">Logo</a>
+
+                <!-- Center menu -->
+                <ul class="center-menu">
+                    <li class="active"><a href="">Home</a></li>
+                    <li><a href="">Room</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+
+                <!-- Right menu -->
+                <ul class="right-menu">
+                    <li><a href="">Sign in</a></li>
+                    <li><a href="">Register</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+    <!-- nav end -->
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <h2>FIND AND BOOK HOTELS ANYWHERE<br>IN THE WORLD</h2>
+
+            <p>
+            Seamless room discovery and booking, no front-desk waiting,
+            no hassle. Your perfect stay starts with a tap.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="btn-large blue">Book Now</a>
+                <a class="btn-large grey darken-3">Learn More</a>
+            </div>
+
+        </div>
+    </section> 
+    <!-- END HERO SECTION -->
+
+    <!-- start booking section -->
+
+    <div class="search-container">
+
+        <div class="search-box">
+
+            <div class="field">
+                <span class="material-symbols-outlined">location_on</span>
+                <div>
+                    <label>Where are you headed?</label>
+                    <p>Lagos, Nigeria</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="field">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <div>
+                    <label>Check in</label>
+                    <p>20 Jul 2026</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="field">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <div>
+                    <label>Check Out</label>
+                    <p>24 Jul 2026</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="field">
+                <span class="material-symbols-outlined">person</span>
+                <div>
+                    <label>Guests & Rooms</label>
+                    <p>1 Room, 1 Adult</p>
+                </div>
+            </div>
+
+            <button class="book-btn">Book Now</button>
+
+        </div>
+
+    </div>
+    <!-- end of booking -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

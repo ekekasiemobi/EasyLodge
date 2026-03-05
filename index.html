@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<title>Hotel</title>
+
+<style>
+
+/* NAV */
+
+.nav-flex{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+}
+
+.center-menu{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:25px;
+}
+
+.right-menu{
+display:flex;
+gap:15px;
+}
+
+.brand-logo{
+position:relative !important;
+}
+
+/* HERO */
+
+.hero{
+height:650px;
+background:url("images/hotel1.jpeg") center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+color:white;
+max-width:750px;
+}
+
+.hero h2{
+font-size:48px;
+font-weight:600;
+}
+
+.hero p{
+margin:20px 0;
+}
+
+/* BOOKING */
+
+.booking-wrapper{
+position:absolute;
+bottom:-60px;
+width:100%;
+display:flex;
+justify-content:center;
+padding:0 20px;
+}
+
+.search-box{
+background:white;
+display:flex;
+align-items:center;
+border-radius:12px;
+padding:15px 20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+gap:20px;
+flex-wrap:wrap;
+}
+
+.field{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.field label{
+font-size:12px;
+color:#888;
+}
+
+.field p{
+margin:0;
+font-size:14px;
+font-weight:600;
+}
+
+.material-symbols-outlined{
+font-size:22px;
+color:#555;
+}
+
+.divider{
+width:1px;
+height:40px;
+background:#e5e5e5;
+}
+
+.book-btn{
+background:#1e3a8a;
+color:white;
+border:none;
+padding:14px 26px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.center-menu{
+display:none;
+}
+
+.right-menu{
+display:none;
+}
+
+.search-box{
+flex-direction:column;
+align-items:flex-start;
+width:100%;
+}
+
+.divider{
+display:none;
+}
+
+.booking-wrapper{
+bottom:-120px;
+}
+
+.hero{
+height:600px;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+}
+
+.custom-input input{
+margin:0;
+border:none !important;
+box-shadow:none !important;
+font-size:14px;
+}
+
+.custom-input label{
+font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav style="background:#2d2d2c;">
+<div class="nav-wrapper nav-flex">
+
+<a href="#" class="brand-logo">Logo</a>
+
+<a href="#" data-target="mobile-menu" class="sidenav-trigger">
+<i class="material-icons">menu</i>
+</a>
+
+<ul class="center-menu">
+<li><a href="">Home</a></li>
+<li><a href="">Room</a></li>
+<li><a href="">Services</a></li>
+<li><a href="">About</a></li>
+<li><a href="">Contact</a></li>
+</ul>
+
+<ul class="right-menu">
+<li><a href="">Sign in</a></li>
+<li><a href="">Register</a></li>
+</ul>
+
+</div>
+</nav>
+
+<!-- MOBILE MENU -->
+
+<ul class="sidenav" id="mobile-menu">
+<li><a href="">Home</a></li>
+<li><a href="">Room</a></li>
+<li><a href="">Services</a></li>
+<li><a href="">About</a></li>
+<li><a href="">Contact</a></li>
+<li><a href="">Sign in</a></li>
+<li><a href="">Register</a></li>
+</ul>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="container hero-content">
+
+<h2>FIND AND BOOK HOTELS ANYWHERE IN THE WORLD</h2>
+
+<p>
+Seamless room discovery and booking. No front desk waiting.
+Your perfect stay starts with a tap.
+</p>
+
+<div>
+<a class="btn-large blue">Book Now</a>
+<a class="btn-large grey darken-3">Learn More</a>
+</div>
+
+</div>
+
+<!-- BOOKING OVERLAP -->
+
+<div class="booking-wrapper">
+
+<form class="search-box">
+
+<!-- LOCATION -->
+<div class="field">
+<span class="material-symbols-outlined">location_on</span>
+
+<div class="input-field custom-input">
+<input type="text" id="location" placeholder="Enter destination">
+<label for="location">Where are you headed?</label>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CHECK IN -->
+<div class="field">
+<span class="material-symbols-outlined">calendar_month</span>
+
+<div class="input-field custom-input">
+<input type="text" class="datepicker" id="checkin">
+<label for="checkin">Check In</label>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CHECK OUT -->
+<div class="field">
+<span class="material-symbols-outlined">calendar_month</span>
+
+<div class="input-field custom-input">
+<input type="text" class="datepicker" id="checkout">
+<label for="checkout">Check Out</label>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GUESTS -->
+<div class="field">
+<span class="material-symbols-outlined">person</span>
+
+<div class="input-field custom-input">
+<input type="number" id="guests" min="1" value="1">
+<label for="guests">Guests</label>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ROOMS -->
+<div class="field">
+
+<div class="input-field custom-input">
+<input type="number" id="rooms" min="1" value="1">
+<label for="rooms">Rooms</label>
+</div>
+</div>
+
+<button class="book-btn">Book Now</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+var elems = document.querySelectorAll('.sidenav');
+M.Sidenav.init(elems);
+});
+</script>
+
+</body>
+</html>

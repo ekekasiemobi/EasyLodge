@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Booking Bar</title>
+
+<!-- Materialize CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+body{
+    background:#f5f5f5;
+}
+
+/* booking container */
+.booking-bar{
+    max-width:1000px;
+    margin:80px auto;
+    background:#fff;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* flex layout */
+.booking-flex{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* each field box */
+.booking-field{
+    flex:1;
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    padding:0 10px;
+}
+
+/* remove default margin */
+.booking-field .input-field{
+    margin:0;
+}
+
+/* button style */
+.book-btn{
+    height:54px;
+    border-radius:10px;
+    padding:0 25px;
+    font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    
+    <div class="booking-bar">
+        
+        <div class="booking-flex">
+
+            <!-- Location -->
+            <div class="booking-field">
+                <div class="input-field">
+                    <i class="material-icons prefix">place</i>
+                    <input type="text" placeholder="Lagos Hotel">
+                    <label>Where are you headed?</label>
+                </div>
+            </div>
+
+            <!-- Check in -->
+            <div class="booking-field">
+                <div class="input-field">
+                    <i class="material-icons prefix">event</i>
+                    <input type="text" class="datepicker">
+                    <label>Check in</label>
+                </div>
+            </div>
+
+            <!-- Check out -->
+            <div class="booking-field">
+                <div class="input-field">
+                    <i class="material-icons prefix">event</i>
+                    <input type="text" class="datepicker">
+                    <label>Check Out</label>
+                </div>
+            </div>
+
+            <!-- Guests -->
+            <div class="booking-field">
+                <div class="input-field">
+                    <i class="material-icons prefix">people</i>
+                    <input type="text" placeholder="1 Room, 1 Adult">
+                    <label>Guests & Rooms</label>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <a class="waves-effect waves-light btn blue darken-3 book-btn">
+                Book Now
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    M.Datepicker.init(elems);
+});
+</script>
+
+</body>
+</html>
