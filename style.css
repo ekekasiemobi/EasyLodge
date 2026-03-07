@@ -1,44 +1,39 @@
-/* nav css */
+/* NAV */
 
 .nav-flex{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
 }
 
 .center-menu{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:25px;
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:25px;
 }
 
 .right-menu{
-    display:flex;
-    gap:15px;
+display:flex;
+gap:15px;
 }
+
 .brand-logo{
-    position:relative !important;
+position:relative !important;
 }
-
-body{
-font-family: "Poppins", sans-serif;
-}
-
-/* end nav css */
-
 
 /* HERO */
 
 .hero{
-height:700px;
+height:650px;
 background:url("images/hotel1.jpeg") center/cover no-repeat;
 position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
+text-align:center;
 }
 
 .hero-overlay{
@@ -53,7 +48,7 @@ background:rgba(0,0,0,0.55);
 .hero-content{
 position:relative;
 color:white;
-max-width:800px;
+max-width:750px;
 }
 
 .hero h2{
@@ -65,86 +60,191 @@ font-weight:600;
 margin:20px 0;
 }
 
-.hero-buttons a{
-margin:10px;
-}
+/* BOOKING */
 
-.border-btn{
-border:1px solid white;
-}
-
-body{
-    background:#f4f4f4;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-/* end hero css */
-
-
-/* start booking css */
-
-body{
-    background:#f4f4f4;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.search-container{
-    display:flex;
-    justify-content:center;
-    margin-top:120px;
+.booking-wrapper{
+position:absolute;
+bottom:-60px;
+width:100%;
+display:flex;
+justify-content:center;
+padding:0 20px;
 }
 
 .search-box{
-    background:white;
-    display:flex;
-    align-items:center;
-    border-radius:12px;
-    padding:15px 20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
-    gap:20px;
+background:white;
+display:flex;
+align-items:center;
+border-radius:12px;
+padding:15px 20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+gap:20px;
+flex-wrap:wrap;
 }
 
 .field{
-    display:flex;
-    align-items:center;
-    gap:10px;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .field label{
-    font-size:12px;
-    color:#888;
+font-size:12px;
+color:#888;
 }
 
 .field p{
-    margin:0;
-    font-size:14px;
-    font-weight:600;
+margin:0;
+font-size:14px;
+font-weight:600;
 }
 
 .material-symbols-outlined{
-    font-size:22px;
-    color:#555;
+font-size:22px;
+color:#555;
 }
 
 .divider{
-    width:1px;
-    height:40px;
-    background:#e5e5e5;
+width:1px;
+height:40px;
+background:#e5e5e5;
 }
 
 .book-btn{
-    background:#1e3a8a;
-    color:white;
-    border:none;
-    padding:14px 26px;
-    border-radius:8px;
-    font-size:14px;
-    cursor:pointer;
-    transition:0.3s;
+background:#1e3a8a;
+color:white;
+border:none;
+padding:14px 26px;
+border-radius:8px;
+cursor:pointer;
 }
 
-.book-btn:hover{
-    background:#162c6b;
+/* WHY */
+
+.why i{
+margin-bottom:10px;
 }
 
-/* end booking css */
+
+/* DESTINATIONS */
+
+.destination-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.destination-card{
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-card img{
+    width: 100%;
+    /* max-height: 820px; */
+    display: block;
+}
+
+.overlay-text{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+}
+
+.card-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-details{
+    font-size: 14px;
+}
+
+.card-title{
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.overlay-text{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    text-align: left;
+}
+
+.card-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+
+.card-details{
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+}
+
+.card-title{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-details{
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* end destination */
+
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.center-menu{
+display:none;
+}
+
+.right-menu{
+display:none;
+}
+
+.search-box{
+flex-direction:column;
+align-items:flex-start;
+width:100%;
+}
+
+.divider{
+display:none;
+}
+
+.booking-wrapper{
+bottom:-120px;
+}
+
+.hero{
+height:600px;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+}
+
+.custom-input input{
+margin:0;
+border:none !important;
+box-shadow:none !important;
+font-size:14px;
+}
+
+.custom-input label{
+font-size:12px;
+}
