@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet" href="materialize/css/materialize.css"> -->
+<title>Easy Lodge</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#1f3b66;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+.nav-btns button{
+padding:8px 16px;
+border-radius:6px;
+border:none;
+margin-left:10px;
+cursor:pointer;
+}
+
+.signin{
+background:transparent;
+border:1px solid white;
+color:white;
+}
+
+.register{
+background:white;
+color:#1f3b66;
+}
+
+/* SEARCH BAR */
+
+.search-box{
+background:white;
+width:90%;
+margin:20px auto;
+padding:20px;
+border-radius:12px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:space-between;
+}
+
+.search-box input,
+.search-box select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+width:180px;
+}
+
+.search-box button{
+background:#1f3b66;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* MAIN LAYOUT */
+
+.container{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:250px 1fr;
+gap:30px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+.sidebar h4{
+margin-bottom:10px;
+}
+
+.sidebar label{
+display:block;
+margin:8px 0;
+}
+
+/* HOTEL GRID */
+
+.hotels{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-body{
+padding:15px;
+}
+
+.card-title{
+font-size:16px;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.location{
+font-size:13px;
+color:gray;
+}
+
+.price{
+margin-top:8px;
+font-weight:bold;
+}
+
+.rating{
+color:orange;
+font-size:14px;
+float:right;
+}
+
+/* LOAD BUTTON */
+
+.load{
+text-align:center;
+margin:30px 0;
+}
+
+.load button{
+padding:10px 20px;
+border-radius:8px;
+border:1px solid #ccc;
+background:white;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#1f3b66;
+color:white;
+margin-top:40px;
+padding:40px 5%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+display:block;
+margin:6px 0;
+font-size:14px;
+}
+
+.copyright{
+border-top:1px solid rgba(255,255,255,0.2);
+margin-top:30px;
+padding-top:15px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+font-size:13px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:1000px){
+
+.hotels{
+grid-template-columns:repeat(2,1fr);
+}
+
+.container{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.nav-links{
+display:none;
+}
+
+.search-box{
+flex-direction:column;
+}
+
+.search-box input,
+.search-box select{
+width:100%;
+}
+
+.hotels{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+<div class="logo">Easy Lodge</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="#">Rooms</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contacts</a>
+</div>
+
+<div class="nav-btns">
+<a href="Login/index.html" class="signin">Sign in</a>
+<a href="Register/index.html" class="register">Register</a>
+</div>
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<select>
+<option>Where are you headed?</option>
+<option>Lagos Hotel</option>
+</select>
+
+<input type="date">
+<input type="date">
+
+<select>
+<option>1 Room · 1 Adult</option>
+<option>2 Rooms</option>
+</select>
+
+<button>Book Now</button>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h4>Price Range</h4>
+<input type="range">
+
+<h4>Duration</h4>
+<label><input type="checkbox"> 1-2 days</label>
+<label><input type="checkbox"> 3-4 days</label>
+<label><input type="checkbox"> 5+ days</label>
+
+<h4>Category</h4>
+<label><input type="checkbox"> Adventure</label>
+<label><input type="checkbox"> Beach</label>
+<label><input type="checkbox"> Culture</label>
+<label><input type="checkbox"> City Tour</label>
+
+<br>
+<button>Reset Filter</button>
+
+</div>
+
+<!-- HOTEL CARDS -->
+
+<div>
+
+<div class="hotels">
+
+<div class="card">
+<img src="https://picsum.photos/400/300?1">
+<div class="card-body">
+<div class="card-title">Lagos Continental Hotel <span class="rating">★4.9</span></div>
+<div class="location">VI, Lagos</div>
+<div class="price">₦150,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?2">
+<div class="card-body">
+<div class="card-title">Eko Hotels & Suites <span class="rating">★4.8</span></div>
+<div class="location">VI, Lagos</div>
+<div class="price">₦50,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?3">
+<div class="card-body">
+<div class="card-title">Radisson Blu Anchorage <span class="rating">★4.8</span></div>
+<div class="location">Ikeja, Lagos</div>
+<div class="price">₦150,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?4">
+<div class="card-body">
+<div class="card-title">The Wheatbaker <span class="rating">★4.5</span></div>
+<div class="location">Ikoyi, Lagos</div>
+<div class="price">₦100,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?5">
+<div class="card-body">
+<div class="card-title">Lagos Marriott Hotel <span class="rating">★4.5</span></div>
+<div class="location">Ikeja, Lagos</div>
+<div class="price">₦50,000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?6">
+<div class="card-body">
+<div class="card-title">One90 Apartment <span class="rating">★4.5</span></div>
+<div class="location">Surulere, Lagos</div>
+<div class="price">₦85,000</div>
+</div>
+</div>
+
+</div>
+
+<div class="load">
+<button>Loading</button>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h2>Easy Lodge</h2>
+<p>Luxort combines timeless elegance with modern luxury, offering unparalleled comfort and unforgettable experiences.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<a href="#">Home</a>
+<a href="#">About Us</a>
+<a href="#">Events</a>
+<a href="#">Testimonials</a>
+<a href="#">FAQ</a>
+</div>
+
+<div>
+<h4>Social Media</h4>
+<a href="#">X</a>
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+</div>
+
+</div>
+
+<div class="copyright">
+<span>© 2026 EasyLodge, All Right Reserved</span>
+<span>Terms & Conditions | Privacy Policy</span>
+</div>
+
+</footer>
+
+</body>
+</html>
