@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Lodge Upgrade</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+/* NAVBAR */
+
+header{
+background:#27497a;
+color:white;
+padding:15px 40px;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:22px;
+font-weight:bold;
+}
+
+.logo img{
+width:40px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:35px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* MAIN SECTION */
+
+.container{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.room-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.upgrade-box{
+background:#eaeaea;
+padding:40px;
+}
+
+.upgrade-box h3{
+margin-bottom:10px;
+}
+
+.field{
+margin-bottom:25px;
+}
+
+.field label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+}
+
+.field input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+background:#f5f5f5;
+}
+
+.total{
+font-weight:bold;
+font-size:18px;
+}
+
+.buttons{
+margin-top:20px;
+display:flex;
+gap:20px;
+}
+
+button{
+padding:12px 28px;
+border:none;
+border-radius:8px;
+background:#27497a;
+color:white;
+cursor:pointer;
+}
+
+button.cancel{
+background:#3a5e96;
+}
+
+/* FOOTER */
+
+footer{
+background:#27497a;
+color:white;
+padding:50px 40px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+}
+
+.footer-logo{
+font-size:28px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.footer-links ul{
+list-style:none;
+}
+
+.footer-links li{
+margin:8px 0;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+}
+
+.copyright{
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:20px;
+display:flex;
+justify-content:space-between;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+}
+
+nav{
+display:none;
+width:100%;
+}
+
+nav ul{
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+nav.active{
+display:block;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.navbar{
+flex-wrap:wrap;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.png">
+<span>Easy Lodge</span>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Hotels</a></li>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">Rewards</a></li>
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="container">
+
+<div class="room-image">
+<img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32">
+</div>
+
+<div class="upgrade-box">
+
+<div class="field">
+<label>Current Room:</label>
+<input type="text" value="Eko Standard Room" readonly>
+</div>
+
+<div class="field">
+<label>New Room:</label>
+<input type="text" value="Eko Signature Room" readonly>
+</div>
+
+<div class="field">
+<label>Upgrade Cost:</label>
+<input type="text" value="₦70,000 / night" readonly>
+</div>
+
+<div class="field">
+<label>Total Upgrade Cost:</label>
+<input class="total" type="text" value="₦280,000 for 4 days & nights" readonly>
+</div>
+
+<div class="buttons">
+<button class="cancel">Cancel</button>
+<button>Confirm Upgrade</button>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+<div class="footer-logo">EASY LODGE</div>
+<p>
+Luxort combines timeless elegance with modern luxury,
+offering unparalleled comfort and unforgettable experiences
+</p>
+</div>
+
+<div class="footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Events</a></li>
+<li><a href="#">Testimonials</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+
+<div class="footer-links">
+<h4>Social Media</h4>
+<ul>
+<li><a href="#">X</a></li>
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Instagram</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+<span>© 2026 EasyLodge, All Right Reserved</span>
+<span>Terms & Conditions | Privacy Policy</span>
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
