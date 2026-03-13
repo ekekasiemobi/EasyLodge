@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Lodge Dashboard</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#23457a;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+font-weight:600;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+opacity:0.8;
+}
+
+.nav-links a.active{
+opacity:1;
+font-weight:bold;
+}
+
+/* PAGE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 20px;
+}
+
+/* HEADER */
+
+.header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.header p{
+color:#777;
+margin-bottom:40px;
+}
+
+/* BOOKINGS */
+
+.booking-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.new-booking{
+cursor:pointer;
+color:#23457a;
+}
+
+/* BOOKING CARD */
+
+.booking-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+max-width:520px;
+}
+
+.booking-img{
+height:200px;
+background-image:url("https://images.unsplash.com/photo-1566073771259-6a8506099945");
+background-size:cover;
+background-position:center;
+position:relative;
+}
+
+.confirmed{
+position:absolute;
+top:10px;
+right:10px;
+background:#23457a;
+color:white;
+padding:4px 10px;
+border-radius:6px;
+font-size:12px;
+}
+
+.booking-body{
+padding:20px;
+}
+
+.booking-body h3{
+margin-bottom:5px;
+}
+
+.booking-info{
+display:flex;
+gap:20px;
+margin:15px 0;
+}
+
+.info-box{
+background:#f3f3f3;
+padding:10px;
+border-radius:8px;
+font-size:12px;
+text-align:center;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:10px;
+}
+
+.check-btn{
+background:#23457a;
+color:white;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
+}
+
+/* SERVICE CARDS */
+
+.cards{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.card{
+background:#ececec;
+border-radius:12px;
+padding:30px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card-icon{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#777;
+font-size:14px;
+}
+
+/* SERVICE REQUEST */
+
+.requests{
+margin-top:50px;
+}
+
+.request-box{
+margin-top:10px;
+background:#e9e9e9;
+padding:20px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.status{
+background:white;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+background:#23457a;
+color:white;
+padding:60px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+}
+
+.footer-links ul{
+list-style:none;
+margin-top:10px;
+}
+
+.footer-links li{
+margin-bottom:8px;
+}
+
+.footer-bottom{
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:15px;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.booking-card{
+max-width:100%;
+}
+
+}
+
+@media(max-width:600px){
+
+.navbar{
+padding:15px 20px;
+}
+
+.nav-links{
+gap:15px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.header h1{
+font-size:28px;
+}
+
+.footer-bottom{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">Easy Lodge</div>
+
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Hotels</a></li>
+<li><a href="#" class="active">Dashboard</a></li>
+<li><a href="#">Rewards</a></li>
+</ul>
+
+</nav>
+
+
+<div class="container">
+
+<div class="header">
+
+<h1>Welcome Back, Sarah</h1>
+<p>Manage your stays and explore services</p>
+
+</div>
+
+<div class="booking-title">
+<h2>Your Bookings</h2>
+<div class="new-booking">+ New bookings</div>
+</div>
+
+<div class="booking-card">
+
+<div class="booking-img">
+<div class="confirmed">Confirmed</div>
+</div>
+
+<div class="booking-body">
+
+<h3>Eko Hotels & Suites</h3>
+<small>Lagos, Nigeria</small>
+
+<div class="booking-info">
+
+<div class="info-box">
+Check-In<br>May 19
+</div>
+
+<div class="info-box">
+Check-Out<br>May 22
+</div>
+
+<div class="info-box">
+Guest<br>3
+</div>
+
+</div>
+
+<div class="price-row">
+
+<div>
+<b>₦ 200,000</b><br>
+<small>4 nights in 4 days</small>
+</div>
+
+<button class="check-btn">Check-in</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICE CARDS -->
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">📅</div>
+<h3>Check-In</h3>
+<p>Start digital check-in</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🛎</div>
+<h3>Services</h3>
+<p>Request hotel services</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🔑</div>
+<h3>Room Access</h3>
+<p>Start digital check-in</p>
+</div>
+
+<div class="card">
+<div class="card-icon">✨</div>
+<h3>For You</h3>
+<p>Personalised offers</p>
+</div>
+
+<div class="card">
+<div class="card-icon">💎</div>
+<h3>Loyalty</h3>
+<p>Points & rewards</p>
+</div>
+
+</div>
+
+
+<!-- SERVICE REQUEST -->
+
+<div class="requests">
+
+<h2>Services Requests</h2>
+
+<div class="request-box">
+
+<div>
+<b>Food</b><br>
+Room service breakfast for 2
+</div>
+
+<div class="status">In progress</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+<div class="footer-logo">EASY LODGE</div>
+<p style="margin-top:10px;max-width:320px;">
+Luxort combines timeless elegance with modern luxury,
+offering unparalleled comfort and unforgettable experiences
+</p>
+</div>
+
+<div class="footer-links">
+<h3>Quick Links</h3>
+<ul>
+<li>Home</li>
+<li>About Us</li>
+<li>Events</li>
+<li>Testimonials</li>
+<li>FAQ</li>
+</ul>
+</div>
+
+<div class="footer-links">
+<h3>Social Media</h3>
+<ul>
+<li>X</li>
+<li>Facebook</li>
+<li>Instagram</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<div>© 2026 EasyLodge, All Right Reserved</div>
+<div>Terms & Conditions &nbsp; Privacy Policy</div>
+</div>
+
+</footer>
+
+
+<script>
+
+/* CARD INTERACTION */
+
+document.querySelectorAll(".card").forEach(card=>{
+card.addEventListener("click",()=>{
+alert(card.querySelector("h3").innerText + " opened");
+});
+});
+
+/* CHECK IN BUTTON */
+
+document.querySelector(".check-btn").addEventListener("click",()=>{
+alert("Starting digital check-in...");
+});
+
+</script>
+
+</body>
+</html>

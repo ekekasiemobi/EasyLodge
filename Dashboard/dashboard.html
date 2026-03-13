@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Lodge Dashboard</title>
+
+<style>
+
+/* GENERAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#23457a;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+position:relative;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links li{
+cursor:pointer;
+opacity:0.8;
+}
+
+.nav-links .active{
+font-weight:bold;
+opacity:1;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* MAIN */
+
+.main{
+padding:60px 80px;
+}
+
+.subtitle{
+color:#777;
+margin-top:10px;
+margin-bottom:40px;
+}
+
+/* BOOKING BOX */
+
+.booking-box{
+background:#e8e8e8;
+padding:70px;
+border-radius:15px;
+text-align:center;
+margin-bottom:40px;
+}
+
+.booking-box p{
+font-size:22px;
+margin-bottom:20px;
+color:#666;
+}
+
+.booking-box button{
+background:#23457a;
+color:white;
+border:none;
+padding:12px 30px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:20px;
+}
+
+.card{
+background:#e8e8e8;
+padding:40px;
+border-radius:15px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.active-card{
+background:#23457a;
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+background:#23457a;
+color:white;
+margin-top:80px;
+padding:60px 80px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-links ul,
+.footer-social ul{
+list-style:none;
+margin-top:10px;
+}
+
+.footer-links li,
+.footer-social li{
+margin-bottom:8px;
+}
+
+.footer-bottom{
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.3);
+padding-top:20px;
+text-align:center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.navbar{
+padding:20px;
+}
+
+.main{
+padding:40px 20px;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+/* MOBILE NAV */
+
+@media (max-width:700px){
+
+.hamburger{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+right:0;
+background:#23457a;
+width:100%;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.nav-links li{
+margin:10px 0;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.booking-box{
+padding:40px 20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">Easy Lodge</div>
+
+<div class="hamburger" id="hamburger">☰</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="home.html">Home</a></li>
+<li><a href="hotels.html">Hotels</a></li>
+<li class="active"><a href="dashboard.html">Dashboard</a></li>
+<li><a href="rewards.html">Rewards</a></li>
+
+</ul>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+<h1>Welcome Back, Sarah</h1>
+<p class="subtitle">Manage your stays and explore services</p>
+
+<h2>Your Bookings</h2>
+
+<div class="booking-box">
+
+<p>No bookings yet</p>
+
+<button id="findHotel">Find a Hotel</button>
+
+</div>
+
+
+<!-- SERVICE CARDS -->
+
+<div class="cards">
+
+<div class="card active-card">
+<h3>Check-In</h3>
+<p>Start digital check-in</p>
+</div>
+
+<div class="card">
+<h3>Services</h3>
+<p>Request hotel services</p>
+</div>
+
+<div class="card">
+<h3>Room Access</h3>
+<p>Start digital check-in</p>
+</div>
+
+<div class="card">
+<h3>For You</h3>
+<p>Personalised offers</p>
+</div>
+
+<div class="card">
+<h3>Loyalty</h3>
+<p>Points & rewards</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+<h2>EASY LODGE</h2>
+<p style="margin-top:10px; max-width:300px;">
+Luxort combines timeless elegance with modern luxury,
+offering unparalleled comfort and unforgettable experiences.
+</p>
+</div>
+
+<div class="footer-links">
+<h3>Quick Links</h3>
+<ul>
+<li>Home</li>
+<li>About Us</li>
+<li>Events</li>
+<li>Testimonials</li>
+<li>FAQ</li>
+</ul>
+</div>
+
+<div class="footer-social">
+<h3>Social Media</h3>
+<ul>
+<li>X</li>
+<li>Facebook</li>
+<li>Instagram</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 EasyLodge, All Right Reserved
+</div>
+
+</footer>
+
+
+<script>
+
+/* HAMBURGER MENU */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", function(){
+navLinks.classList.toggle("show");
+});
+
+
+/* FIND HOTEL BUTTON */
+
+document.getElementById("findHotel").addEventListener("click", function(){
+
+alert("Opening hotel search page...");
+
+// redirect to hotel search page
+window.location.href = "../hotelsearch.html";
+
+});
+
+
+/* DASHBOARD CARDS */
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+card.addEventListener("click", function(){
+
+const title = this.querySelector("h3").innerText;
+
+cards.forEach(c => c.classList.remove("active-card"));
+this.classList.add("active-card");
+
+if(title === "Check-In"){
+alert("Starting digital check-in...");
+}
+
+else if(title === "Services"){
+alert("Opening hotel services...");
+}
+
+else if(title === "Room Access"){
+alert("Accessing your room key...");
+}
+
+else if(title === "For You"){
+alert("Showing personalized offers...");
+}
+
+else if(title === "Loyalty"){
+alert("Opening rewards & loyalty points...");
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

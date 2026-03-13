@@ -149,3 +149,55 @@ font-size:20px;
 font-size:12px;
 opacity:0.8;
 }
+
+
+/* TABLET RESPONSIVENESS */
+
+@media (max-width: 1024px){
+
+.container{
+width:90%;
+height:auto;
+}
+
+.left{
+padding:30px;
+}
+
+.left h1{
+font-size:28px;
+}
+
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVENESS */
+/* ===================== */
+
+@media (max-width: 768px){
+
+.container{
+flex-direction:column;
+width:95%;
+height:auto;
+}
+
+/* Hide the image */
+
+.right{
+display:none;
+}
+
+/* Make form full width */
+
+.left{
+width:100%;
+padding:25px;
+}
+
+body{
+align-items:flex-start;
+padding:20px 0;
+}
+
+}

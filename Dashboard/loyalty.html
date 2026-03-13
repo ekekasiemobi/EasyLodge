@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Lodge Loyalty</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#23457a;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+position:relative;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:40px;
+}
+
+.logo span{
+font-size:22px;
+font-weight:600;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+opacity:0.85;
+}
+
+.nav-links a.active{
+font-weight:bold;
+opacity:1;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* PAGE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+text-align:center;
+}
+
+.container h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.container p{
+color:#777;
+margin-bottom:40px;
+}
+
+/* POINT CARD */
+
+.points-card{
+background:#23457a;
+color:white;
+padding:40px;
+border-radius:15px;
+text-align:left;
+margin-bottom:50px;
+}
+
+.points-card small{
+color:#d6a64b;
+}
+
+.points-card h2{
+font-size:50px;
+margin:10px 0;
+}
+
+.progress{
+height:8px;
+background:#999;
+border-radius:10px;
+margin:20px 0;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+width:70%;
+background:#d6a64b;
+}
+
+/* REWARDS */
+
+.rewards-title{
+text-align:left;
+font-size:28px;
+margin-bottom:25px;
+}
+
+.rewards{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.reward-card{
+background:white;
+border-radius:10px;
+padding:25px;
+text-align:left;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.reward-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+.points{
+color:#d6a64b;
+font-weight:bold;
+font-size:14px;
+}
+
+.reward-card p{
+color:#777;
+font-size:14px;
+margin-bottom:20px;
+}
+
+.reward-card button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#ddd;
+cursor:pointer;
+}
+
+.reward-card button.redeem{
+background:#23457a;
+color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hamburger{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+right:0;
+background:#23457a;
+width:100%;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
+}
+
+.nav-links li{
+margin:10px 0;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.rewards{
+grid-template-columns:1fr;
+}
+
+.container h1{
+font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png" alt="Easy Lodge Logo">
+<span>Easy Lodge</span>
+</div>
+
+<div class="hamburger" id="hamburger">
+☰
+</div>
+
+<ul class="nav-links" id="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Hotels</a></li>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#" class="active">Rewards</a></li>
+</ul>
+
+</nav>
+
+
+<!-- PAGE -->
+
+<div class="container">
+
+<h1>Loyalty Program</h1>
+<p>Earn and redeem rewards with easy stay.</p>
+
+<div class="points-card">
+
+<small>GOLD MEMBER</small>
+
+<h2>3,550</h2>
+
+<p>Available Points</p>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<p>1,450 points to Platinum</p>
+
+</div>
+
+
+<div class="rewards-title">Available Rewards</div>
+
+<div class="rewards">
+
+<div class="reward-card">
+<div class="reward-header">
+<h3>Free Night Stay</h3>
+<span class="points">⭐ 5,000 pts</span>
+</div>
+<p>Redeem for one complimentary night at any partner hotel</p>
+<button>Not enough points</button>
+</div>
+
+<div class="reward-card">
+<div class="reward-header">
+<h3>Spa Voucher</h3>
+<span class="points">⭐ 2,000 pts</span>
+</div>
+<p>₦25,000 Spa credit at participating locations</p>
+<button class="redeem">Redeem</button>
+</div>
+
+<div class="reward-card">
+<div class="reward-header">
+<h3>Room Upgrade</h3>
+<span class="points">⭐ 1,500 pts</span>
+</div>
+<p>Upgrade to the next category on your next booking</p>
+<button class="redeem">Redeem</button>
+</div>
+
+<div class="reward-card">
+<div class="reward-header">
+<h3>Airport Lounge</h3>
+<span class="points">⭐ 1,000 pts</span>
+</div>
+<p>Access to premium airport lounges nationwide</p>
+<button class="redeem">Redeem</button>
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* HAMBURGER MENU */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+navLinks.classList.toggle("show");
+});
+
+/* REDEEM BUTTON */
+
+document.querySelectorAll(".redeem").forEach(btn=>{
+btn.addEventListener("click",()=>{
+alert("Reward redeemed successfully!");
+});
+});
+
+</script>
+
+</body>
+</html>

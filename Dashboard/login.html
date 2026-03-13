@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Lodge Register</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f3f3f3;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+width:1100px;
+height:650px;
+background:white;
+display:flex;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+
+.left{
+width:50%;
+padding:50px;
+}
+
+.left h1{
+font-size:32px;
+margin-bottom:5px;
+}
+
+.left p{
+color:#777;
+margin-bottom:20px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+}
+
+label{
+margin-top:10px;
+margin-bottom:5px;
+font-size:14px;
+}
+
+input{
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+outline:none;
+}
+
+input:focus{
+border-color:#2e4b7b;
+}
+
+.forgot{
+text-align:right;
+margin-top:5px;
+margin-bottom:10px;
+}
+
+.forgot a{
+font-size:13px;
+color:#2e4b7b;
+text-decoration:none;
+}
+
+.terms{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:13px;
+margin:15px 0;
+}
+
+/* BUTTON */
+
+.register{
+background:#2e4b7b;
+color:white;
+padding:14px;
+border:none;
+border-radius:8px;
+margin-top:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.register:hover{
+background:#1f3558;
+}
+
+/* DIVIDER */
+
+.divider{
+text-align:center;
+margin:25px 0;
+color:#999;
+}
+
+/* SOCIAL BUTTONS */
+
+.google,
+.facebook{
+width:100%;
+padding:13px;
+border:none;
+border-radius:8px;
+background:#f2f2f2;
+margin-bottom:10px;
+cursor:pointer;
+}
+
+.google:hover,
+.facebook:hover{
+background:#e6e6e6;
+}
+
+/* SIGN IN TEXT */
+
+.signin{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+}
+
+.signin a{
+color:#2e4b7b;
+text-decoration:none;
+}
+
+/* COPYRIGHT */
+
+.copyright{
+margin-top:40px;
+font-size:12px;
+color:#999;
+text-align:center;
+}
+
+/* RIGHT SIDE */
+
+.right{
+width:50%;
+border-radius:20px;
+position:relative;
+background-image:url("bedroom-capstone.webp");
+background-size:cover;
+background-position:center;
+}
+
+/* OVERLAY */
+
+.right::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+border-radius:20px;
+}
+
+/* LOGO */
+
+.logo{
+position:absolute;
+top:25px;
+right:25px;
+color:white;
+text-align:right;
+z-index:2;
+}
+
+.logo h3{
+font-size:20px;
+}
+
+.logo p{
+font-size:12px;
+opacity:0.8;
+}
+
+/* TABLET */
+
+@media (max-width:1024px){
+
+.container{
+width:90%;
+height:auto;
+}
+
+.left{
+padding:35px;
+}
+
+.left h1{
+font-size:28px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.container{
+flex-direction:column;
+width:95%;
+height:auto;
+padding:15px;
+}
+
+.right{
+display:none;
+}
+
+.left{
+width:100%;
+padding:25px;
+}
+
+body{
+align-items:flex-start;
+padding:20px 0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT SIDE -->
+
+<div class="left">
+
+<h1>Welcome Back</h1>
+<p>Sign in for more easy access</p>
+
+<form action="dashboard.html">
+
+<label>Email</label>
+<input type="email" placeholder="Example@email.com">
+
+<label>Password</label>
+<input type="password" placeholder="At least 8 characters">
+
+<div class="forgot">
+<a href="#" class="forgot-link">Forgot password?</a>
+</div>
+
+<div class="terms">
+<input type="checkbox">
+<span>I agree to the <a href="#">terms & policy</a></span>
+</div>
+
+<button class="register">Sign In</button>
+
+</form>
+
+<div class="divider">Or</div>
+
+<button class="google">Sign in with Google</button>
+<button class="facebook">Sign in with Facebook</button>
+
+<p class="signin">Don't you have an account? <a href="#">Sign up</a></p>
+
+<p class="copyright">© 2026 ALL RIGHTS RESERVED</p>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="right">
+
+<div class="logo">
+<h3>Easy Lodge</h3>
+<p>Open Door Concept</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* SIGN IN BUTTON */
+
+document.querySelector(".register").addEventListener("click", function(e){
+
+e.preventDefault();
+
+let email = document.querySelector('input[type="email"]').value;
+let password = document.querySelector('input[type="password"]').value;
+
+if(email === "" || password === ""){
+alert("Please fill in all fields");
+return;
+}
+
+alert("Sign in successful!");
+
+// redirect to dashboard
+window.location.href = "dashboard.html";
+
+
+});
+
+/* FORGOT PASSWORD */
+
+document.querySelector(".forgot-link").addEventListener("click", function(e){
+
+e.preventDefault();
+
+alert("Password reset feature coming soon!");
+
+});
+
+</script>
+
+</body>
+</html>

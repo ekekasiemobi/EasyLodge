@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EasyLodge</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+color:#333;
+}
+
+/* NAVBAR */
+
+header{
+position:absolute;
+width:100%;
+top:0;
+left:0;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+z-index:1000;
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+.nav-btns{
+display:flex;
+gap:10px;
+}
+
+.btn{
+padding:8px 16px;
+border-radius:6px;
+border:1px solid white;
+color:white;
+background:transparent;
+cursor:pointer;
+}
+
+.btn.primary{
+background:#2b4eff;
+border:none;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+margin-bottom:30px;
+}
+
+/* SEARCH BOX */
+
+.search-box{
+background:white;
+padding:15px;
+border-radius:10px;
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.search-box input{
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.search-box button{
+background:#2b4eff;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* SECTION */
+
+section{
+padding:60px 80px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:28px;
+}
+
+/* WHY STAY */
+
+.features{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+text-align:center;
+}
+
+.feature{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+/* DESTINATIONS */
+
+.destinations{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.destination{
+position:relative;
+overflow:hidden;
+border-radius:12px;
+}
+
+.destination img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.destination span{
+position:absolute;
+bottom:10px;
+left:10px;
+color:white;
+font-weight:bold;
+font-size:18px;
+}
+
+/* HOTEL CARDS */
+
+.hotels{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.hotel{
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+.hotel img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.hotel-info{
+padding:15px;
+}
+
+.price{
+color:#2b4eff;
+font-weight:bold;
+}
+
+/* TESTIMONIAL */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.testimonial{
+background:#333;
+color:white;
+padding:20px;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#243e68;
+color:white;
+padding:40px 80px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+footer ul{
+list-style:none;
+}
+
+footer li{
+margin-bottom:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+}
+
+nav{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#243e68;
+flex-direction:column;
+display:none;
+padding:20px;
+}
+
+nav.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-btns{
+display:none;
+}
+
+.hero-content h1{
+font-size:28px;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.destinations{
+grid-template-columns:1fr;
+}
+
+.hotels{
+grid-template-columns:1fr;
+}
+
+.testimonials{
+grid-template-columns:1fr;
+}
+
+section{
+padding:40px 20px;
+}
+
+footer{
+padding:40px 20px;
+flex-direction:column;
+gap:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">EasyLodge</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+<a href="#">Home</a>
+<a href="#">Rooms</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contacts</a>
+</nav>
+
+<div class="nav-btns">
+<button class="btn">Sign in</button>
+<button class="btn primary">Register</button>
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<h1>Find and Book Hotels Anywhere in the World</h1>
+<p>Seamless room discovery and booking.</p>
+
+<div class="search-box">
+<input type="text" placeholder="Where are you headed?">
+<input type="date">
+<input type="date">
+<input type="text" placeholder="Guests & Rooms">
+<button>Book Now</button>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WHY STAY -->
+
+<section>
+
+<h2 class="section-title">Why Stay With Us</h2>
+
+<div class="features">
+
+<div class="feature">
+<h4>Prime Location</h4>
+<p>Hotels in the best areas.</p>
+</div>
+
+<div class="feature">
+<h4>Seamless Check-In</h4>
+<p>Fast digital check-in.</p>
+</div>
+
+<div class="feature">
+<h4>Comfort & Quality</h4>
+<p>Beautiful rooms guaranteed.</p>
+</div>
+
+<div class="feature">
+<h4>24/7 Support</h4>
+<p>We are always here.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DESTINATIONS -->
+
+<section>
+
+<h2 class="section-title">Popular Destinations</h2>
+
+<div class="destinations">
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1589395937658-0557e7d89fad">
+<span>Lagos</span>
+</div>
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1582719478185-5d8f7f1c4b6e">
+<span>Abuja</span>
+</div>
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+<span>Ibadan</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOTELS -->
+
+<section>
+
+<h2 class="section-title">Explore Our Best 5-Star Hotels</h2>
+
+<div class="hotels">
+
+<div class="hotel">
+<img src="https://images.unsplash.com/photo-1560448075-bb485b067938">
+<div class="hotel-info">
+<h4>Lagos Continental Hotel</h4>
+<p class="price">₦165,000 / night</p>
+</div>
+</div>
+
+<div class="hotel">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<div class="hotel-info">
+<h4>Transcorp Hilton Abuja</h4>
+<p class="price">₦125,000 / night</p>
+</div>
+</div>
+
+<div class="hotel">
+<img src="https://images.unsplash.com/photo-1554995207-c18c203602cb">
+<div class="hotel-info">
+<h4>Hotel Presidential</h4>
+<p class="price">₦100,000 / night</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONIAL -->
+
+<section>
+
+<h2 class="section-title">Lets Hear From Our Guests</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"Very easy booking process."</p>
+</div>
+
+<div class="testimonial">
+<p>"Great hotels and good prices."</p>
+</div>
+
+<div class="testimonial">
+<p>"Clean interface and reliable."</p>
+</div>
+
+<div class="testimonial">
+<p>"Perfect for planning trips."</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div>
+<h3>EasyLodge</h3>
+<p>Find and book hotels across Nigeria.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li>Home</li>
+<li>About</li>
+<li>Testimonials</li>
+<li>FAQ</li>
+</ul>
+</div>
+
+<div>
+<h4>Social Media</h4>
+<ul>
+<li>X</li>
+<li>Facebook</li>
+<li>Instagram</li>
+</ul>
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
